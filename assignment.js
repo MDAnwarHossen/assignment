@@ -66,24 +66,23 @@ function feetToMile(feet) {
 
    //--Tiny Friend Function --
   function tinyFriend(names) {
+    names = names.filter(function (item) {
+                          return item != " "}); // All empty " " element filtered
+    names = names.filter(function (item) {
+                          return item != ""}); // All empty "" element filtered
 
-    //If empty element found in names[0], this code will increase it's value
-      if (names[0] == " " ){
-        tiny = names[0] +10;}
-      else{ tiny = names[0];}
-
+    tiny = names[0];
     
-        //Loop iteration
-      for (let i = 0; i < names.length; i++) {
+    //Loop iteration
+    for (let i = 0; i < names.length; i++) {
             let tinyName = names[i];
          
-        //comparison 
-        if (tinyName.length < tiny.length && tinyName != " ") {
+    //comparison 
+    if (tinyName.length < tiny.length && tinyName != " ") {
             tiny = tinyName;
         } 
       }
-      return tiny;
+    return tiny;
   }
-  console.log("Your tiny friend name is :"+tinyFriend([" ", "Anwar", "Sakib", " ", "Apu", "Deva", "Shifter", "AN", "Triton","Betod", "Nelihr"]));
+  console.log("Your tiny friend name is :"+tinyFriend([" ", "Anwar", "Sakib", " ", "", "Apu", "Deva", "Shifter", "AN","", "Triton","Betod", "Nelihr"]));
   //--Tiny Friend Function END--
-  
